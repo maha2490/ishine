@@ -81,20 +81,15 @@
       });
     });
   </script>
-
-
   <script>
     new WOW().init();
   </script>
-
   {% if template contains 'product' or template contains 'collection' %}
   {{ 'jquery.elevateZoom-2.5.5.min.js' | asset_url | script_tag }}
   {% endif %}
   {% if template contains 'index' or template contains 'blog' %}
   {{ 'instafeed.js' | asset_url | script_tag }}
   {% endif %}
-
-
   <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -103,17 +98,12 @@
 
   <!-- Favicons
 ================================================== -->
-
   <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}">
-
   {% if template contains 'customers' %}
   {{ "shopify_common.js" | shopify_asset_url | script_tag }}
   {{ "customer_area.js"  | shopify_asset_url | script_tag }}
   {% endif %}
-
   {{ content_for_header }}
-
-
   {% if settings.popup %}
   <script type="text/javascript">
     if($(window).width() > 500){
@@ -135,19 +125,15 @@
 
   </script>  
   {% endif %}
-
   <script type="text/javascript">
     $(window).load(function() {  
       $('.prod-image').matchHeight();
 
     });
   </script> 
-
   <link rel="next" href="/next"/>
   <link rel="prev" href="/prev"/>
-
   <!--- Google Analytics JS Code ------>
-
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -158,7 +144,6 @@
     ga('send', 'pageview');
 
   </script>
-
   <!-- Facebook Conversion Code for Checkout ISHINE365 -->
   <script>(function() {
   var _fbq = window._fbq || (window._fbq = []);
@@ -174,7 +159,6 @@
     window._fbq = window._fbq || [];
     window._fbq.push(['track', '6031696014571', {'value':'0.01','currency':'USD'}]);
   </script>
-
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -189,17 +173,13 @@
                  src="https://www.facebook.com/tr?id=1117844111612405&ev=PageView&noscript=1"
                  /></noscript>
   <!-- End Facebook Pixel Code -->
-
-
   <script>
     jQuery(document).ready(function($) {
       $(".size-all").after($(".size-XXXL")).after($(".size-XXL")).after($(".size-XL")).after($(".size-L")).after($(".size-M")).after($(".size-S")).after($(".size-XS")).after($(".size-XXS")).after($(".size-XXXS"));
     });
   </script>
-
   <script src="https://raw.githubusercontent.com/webpop/jquery.pin/gh-pages/jquery.pin.js"></script>
 </head>
-
 <body class="gridlock {% if template contains 'collection' %}collection{% else %} {{ template }}{% endif %}">
   {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
   {% unless the_snippet_content contains 'Liquid error' %}
@@ -215,7 +195,6 @@
         <ul>
           {% for l in linklists[child_list_handle].links %}
           <li><a href="{{ l.url }}">{{ l.title }}</a>
-
             {% capture child_list_handle %}{{ l.title | handleize }}{% endcapture %}
             {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}       
             <ul>
@@ -261,35 +240,36 @@
           <li class="seeks"><a id="inline" href="#search_popup" class="open_popup"><i class="fa fa-search"></i></a></li>
           <li class="seeks-mobile"><a href="/search"><i class="fa fa-search"></i></a></li-->
           <li class="search">
-        	<a href="#search_popup" class="open_popup"><img src="{{ 'search_icon.png' | asset_url }}" alt="{{ shop.name }}" class="search_icon"/></a>
+        	<a href="#search_popup" class="open_popup"><img src="{{ 'search_icon.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
       	  </li>
       	  <li class="shopping_cart">
-        	<a href="/cart"><img src="{{ 'icon_test_cart.png' | asset_url }}" alt="{{ shop.name }}" class="shopping_cart_icon"/></a>
+        	<a href="/cart"><img src="{{ 'icon_test_cart.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning shopping_cart_icon"/></a>
       	  </li>
-          {% if shop.customer_accounts_enabled %}
+		  {% if shop.customer_accounts_enabled %}
             {% if customer  %}
-              <!--li class="cust">
-                <a href="/account"><i class="fa fa-user"></i></a>
+              <li class="cust">
+                <a href="/account"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/></a>
               </li>
               <li class="cust">
                 <a href="/account/logout"><i class="fa fa-sign-out"></i></a>
               </li>
             {% else %}
               <li class="cust">
-                <a href="/account/login"><i class="fa fa-user"></i></a>
-              </li-->
+                <a href="/account/login"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/></a>
+              </li>
             {% endif %}
           {% endif %}
-          {% if settings.show_multiple_currencies %}<li>{% include 'currency-change' %}</li>{% endif %}
-          <!--li class="cart-overview"><a href="/cart"> <i class="fa fa-shopping-bag"></i>&nbsp; <span id="item_count">{{ cart.item_count }}</span></a>
+          {% if settings.show_multiple_currencies %}
+        	 <li class="currency_dropdown">{% include 'currency-change' %}</li>
+          {% endif %}
+          <!-- <li class="cart-overview"><a href="/cart"> <i class="fa fa-shopping-bag"></i>&nbsp; <span id="item_count">{{ cart.item_count }}</span></a>
             <div id="crt">
               {% include 'shopping-cart' %}
               {% if cart.item_count != 0 %}
               <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
               {% endif %}
-            </div>
-          </li-->
-          
+            </div> -->
+          </li>    
         </ul>        
       </div>
     </nav></header>
@@ -447,8 +427,6 @@
   <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
   </script>
   <a href="#" class="scrollup Fixed"><i class="fa fa-angle-up fa-2x"></i></a>
-
-
   <!-- Begin Recently Viewed Products -->
   <script type="text/javascript" charset="utf-8">
     //<![CDATA[
@@ -466,12 +444,9 @@
 
     //]]>
   </script>
-
   {{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
   {{ 'jquery.products.min.js' | asset_url | script_tag }}
-
   {% if template contains 'product' %}
-
   <script type="text/javascript" charset="utf-8">
     //<![CDATA[
 
@@ -483,8 +458,6 @@
 
   </script>
   {% endif %}  
-
-
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -508,3 +481,4 @@
 
 </body>
 </html>
+ 
