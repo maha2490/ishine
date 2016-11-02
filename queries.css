@@ -4,6 +4,13 @@
 	ul#footer-icons li {
       margin: 0 0px;
 	}
+	span.mm-log {
+    	float: left;
+	}
+	.avatar_icon {
+		float: right;
+    	margin-top: -3%;
+	}
 }
 @media screen and (max-width: 1219px) {
   	ul#main-nav { 
@@ -290,6 +297,9 @@
   	section.homepage-section {
     	margin-top: 5%;
     }
+    .currency_dropdown {
+    	margin-top: -3%;
+	}
 }/*END media screen and (max-width: 740px) and (min-width: 500px)*/
 
 @media screen and (max-width: 499px) {    
@@ -438,9 +448,6 @@
      .navbar_icon_positioning {
 	    margin-top: 29%;
 	}
-	ul#cart li span.selecter-selected {
-		font-size: 6vw;
-	}
 	/*#qab_placeholder {
       margin-top: 17%;
       margin-bottom: 1%;
@@ -450,5 +457,8 @@
   	}  
     .hp-margin {
     	margin-top: 11%;
+	}
+	.currency_dropdown {
+    	margin-top: -1%;
 	}
 }/*END media screen and (max-width: 499px)*/

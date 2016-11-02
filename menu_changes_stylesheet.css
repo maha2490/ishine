@@ -1301,6 +1301,7 @@ ul#cart li span.selecter-selected {
   font-weight: {{ settings.hello-weight }};
   color: {{ settings.header-icons }};
   font-size: {{ settings.hello-size }};
+  color: #5c5c5c;
 }
 
 ul#cart li select { margin: 0;}

@@ -209,10 +209,16 @@
       {% endfor %}
       {% if shop.customer_accounts_enabled %}
           {% if customer  %}
-      <li class="mm-cust"><a href="/account"><i class="fa fa-user fa-menu"></i><span class="mm-log">Account</span></a></li>
-      <li class="mm-cust"><a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i><span class="mm-log">Logout</span></a></li>
+      	<li class="mm-cust">
+      		<a href="/account"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/><span class="mm-log">Account</span></a>
+      	</li>
+      	<li class="mm-cust">
+      		<a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i><span class="mm-log">Logout</span></a>
+      	</li>
           {% else %}
-      <li class="mm-cust"><a href="/account/login"><i class="fa fa-user fa-menu"></i><span class="mm-log">Login</span></a></li>
+	      	<li class="mm-cust">
+	      		<a href="/account/login"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/></i><span class="mm-log">Login</span></a>
+	      	</li>
           {% endif %}
       {% endif %}	
     </ul>
