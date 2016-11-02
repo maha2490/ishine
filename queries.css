@@ -75,6 +75,10 @@
   	.currency_dropdown {
     	margin-top: -1.5%;
 	}
+	img.navbar_icon_positioning.avatar_icon {
+      float: right;
+      margin-top: -3%;
+    }
 }/*END media screen and (max-width: 1219px)*/
 
 @media screen and (max-width: 980px) and (min-width: 741px) {
