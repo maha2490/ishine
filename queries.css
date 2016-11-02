@@ -67,24 +67,6 @@
   	} 
 }/*END media screen and (max-width: 1219px)*/
 
-@media screen and (min-width: 980px) and (max-width: 1220px ) {
-	ul#footer-icons li {
-      	margin: 0 0px;
-	}
-  	ul#cart li.cust {
-      	display: none;
-  	}
-  	span.mm-log {
-    	float: left;
-    	margin-left: 0;
-  	}
-  	i.fa.fa-user.fa-menu {
-    	float: right;
-    	margin-right: 2%;
-  } 
-}
-
-
 @media screen and (max-width: 980px) and (min-width: 741px) {
     .homepage-promo {
         margin-left: 12% !important;
