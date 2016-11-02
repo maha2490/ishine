@@ -64,7 +64,10 @@
   	i.fa.fa-user.fa-menu {
     	float: right;
     	margin-right: 2%;
-  	} 
+  	}
+  	.currency_dropdown {
+    	margin-top: -1.5%;
+	}
 }/*END media screen and (max-width: 1219px)*/
 
 @media screen and (max-width: 980px) and (min-width: 741px) {
@@ -401,8 +404,12 @@
     .first { clear: none; }
     .product-index:nth-child(2n+1), .article-index:nth-child(2n+1) { clear: left; }  
     #basket-right { text-align: center; }
-    #shopping-cart thead { display: none; }
-    #shopping-cart td { clear: left; display: block; }
+    #shopping-cart thead { 
+    	display: none; 
+    }
+    #shopping-cart td { 
+    	clear: left; display: block; 
+    }
     .cart-title {
       display: block;
       text-align: center;
