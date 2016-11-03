@@ -239,10 +239,14 @@
           {% endfor %}
         </ul>
 <!-- INSERTING ICONS HERE __________________________________________________-->
+        <span><a href="/"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_logo"/></a></span>
         <ul id="cart" class="desktop-4 tablet-6 mobile-3">
           <!--li class="home-icon"><a href="{{ shop.url }}"><i class="fa fa-home"></i></a></li> 
           <li class="seeks"><a id="inline" href="#search_popup" class="open_popup"><i class="fa fa-search"></i></a></li>
           <li class="seeks-mobile"><a href="/search"><i class="fa fa-search"></i></a></li-->
+          <li>
+          	<a href="/"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_logo"/></a>
+          </li>
           <li class="search">
         	<a href="#search_popup" class="open_popup"><img src="{{ 'search_icon.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
       	  </li>
