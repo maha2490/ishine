@@ -1314,8 +1314,8 @@ ul#cart li .selecter-options {
   width: 100px;
   border: 1px solid #eee;
   border-top: 0;
-  left: 50%;
-  margin-left: -70px;
+  left: 72%;
+  /*margin-left: -70px;*/
 }
 
 ul#cart li span.selecter-item {
