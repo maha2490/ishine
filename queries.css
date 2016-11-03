@@ -79,6 +79,14 @@
       float: right;
       margin-top: -3%;
     }
+    .navbar_logo_positioning {
+    	position: absolute;
+    	margin-top: -0.5%;
+    	margin-left: 39%;
+    }
+    .navbar_logo {
+    	width: 5vw;
+    }
 }/*END media screen and (max-width: 1219px)*/
 
 @media screen and (max-width: 980px) and (min-width: 741px) {

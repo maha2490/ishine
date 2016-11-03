@@ -269,3 +269,6 @@ ul#cart li span.selecter-selected {
     font-size: 1.6em;
     color: #5c5c5c;
 }
+.logo_positioning {
+    display: none; 
+}
