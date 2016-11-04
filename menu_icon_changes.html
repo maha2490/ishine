@@ -239,31 +239,28 @@
           {% endfor %}
         </ul>
 <!-- INSERTING ICONS HERE __________________________________________________-->
-        <span class="navbar_logo_positioning"><a href="/"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_logo"/></a></span>
+        <a href="/" class="navbar_logo_positioning"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_logo"/></a>
         <ul id="cart" class="desktop-4 tablet-6 mobile-3">
           <!--li class="home-icon"><a href="{{ shop.url }}"><i class="fa fa-home"></i></a></li> 
           <li class="seeks"><a id="inline" href="#search_popup" class="open_popup"><i class="fa fa-search"></i></a></li>
           <li class="seeks-mobile"><a href="/search"><i class="fa fa-search"></i></a></li-->
-          <li>
-          	<a href="/"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_logo"/></a>
-          </li>
           <li class="search">
         	<a href="#search_popup" class="open_popup"><img src="{{ 'search_icon.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
       	  </li>
       	  <li class="shopping_cart">
-        	<a href="/cart"><img src="{{ 'icon_test_cart.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning shopping_cart_icon"/></a>
+        	<a href="/cart"><img src="{{ 'shopping_icon.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning"/></a>
       	  </li>
 		  {% if shop.customer_accounts_enabled %}
             {% if customer  %}
               <li class="cust">
-                <a href="/account"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/></a>
+                <a href="/account"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning"/></a>
               </li>
               <li class="cust">
                 <a href="/account/logout"><i class="fa fa-sign-out"></i></a>
               </li>
             {% else %}
               <li class="cust">
-                <a href="/account/login"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning avatar_icon"/></a>
+                <a href="/account/login"><img src="{{ 'avatar_thinner.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning"/></a>
               </li>
             {% endif %}
           {% endif %}

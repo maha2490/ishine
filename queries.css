@@ -487,4 +487,12 @@
     	left: 77%;
     	text-align: center;
     }
+    .hp-margin {
+    	margin-top: 15%;
+	}
 }/*END media screen and (max-width: 499px)*/
+@media screen and (max-width: 429px){
+  .hp-margin{
+  	margin-top: 22%;
+  }
+}
