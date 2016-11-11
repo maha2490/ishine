@@ -1,0 +1,585 @@
+<!-- navigation_redesign_final_rachel_theme.liquid -->
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <link href="https://limespot.azureedge.net/storefront/2.0.0/css/recommendations.min.css" rel="stylesheet" />
+  {% include 'limespot-global-head-includes' %}
+
+
+  <meta charset="utf-8" />
+
+  <!-- Basic Page Needs
+================================================== -->
+
+  <title>
+    {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+
+  <!-- CSS
+================================================== -->
+
+  {% include 'google-fonts' %}
+
+
+  {{ 'stylesheet.css' | asset_url | stylesheet_tag }}
+  {{ 'custom.css' | asset_url | stylesheet_tag }}
+  {{ 'queries.css' | asset_url | stylesheet_tag }}
+  {{ 'jquery.mmenu.all.css' | asset_url | stylesheet_tag }}
+
+  <!--[if IE 8 ]>{{ 'ie8.css' | asset_url | stylesheet_tag }}<![endif]-->
+
+
+
+
+
+  {{ 'hover-min.css' | asset_url | stylesheet_tag }}
+
+  <!-- JS
+================================================== -->
+
+  <script src="https://use.fontawesome.com/fa09fd01e1.js"></script>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  {{ 'theme.js' | asset_url | script_tag }} 
+  {{ 'jquery.mmenu.min.all.js' | asset_url | script_tag }} 
+  {{ 'jquery.mmenu.fixedelements.min.js' | asset_url | script_tag }} 
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}  
+  {{ 'jquery.cookie.js' | asset_url | script_tag }}
+  {{ 'handlebars.js' | asset_url | script_tag }}
+  {{ 'api.js' | asset_url | script_tag }}  
+  {{ 'select.js' | asset_url | script_tag }}  
+  {{ 'jquery.easing.1.3.js' | asset_url | script_tag }}
+  {{ 'jquery.placeholder.js' | asset_url | script_tag }}  
+  {{ 'modernizr.custom.js' | asset_url | script_tag }}
+  {{ 'jquery.fancybox.js' | asset_url | script_tag }}
+  {{ 'jquery.mousewheel-3.0.6.pack.js' | asset_url | script_tag }}  
+  {{ 'jquery.dlmenu.js' | asset_url | script_tag }}  
+  {{ 'jquery.flexslider.js' | asset_url | script_tag }}
+  {{ 'wow.js' | asset_url | script_tag }}
+
+  <script type="text/javascript">
+    jQuery(document).ready(function( $ ) {
+      $("#mobile-menu").mmenu({
+        "extensions": [
+          "border-none",
+          "pageshadow",
+          "theme-dark"
+        ],
+        "navbar": {
+          "title": "ISHINE365"
+        },
+        "navbars": [
+          {
+            "position": "top"
+          }
+        ]
+      });
+    });
+  </script>
+
+
+  <script>
+    new WOW().init();
+  </script>
+
+  {% if template contains 'product' or template contains 'collection' %}
+  {{ 'jquery.elevateZoom-2.5.5.min.js' | asset_url | script_tag }}
+  {% endif %}
+  {% if template contains 'index' or template contains 'blog' %}
+  {{ 'instafeed.js' | asset_url | script_tag }}
+  {% endif %}
+
+
+  <!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Favicons
+================================================== -->
+
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}">
+
+  {% if template contains 'customers' %}
+  {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+  {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {{ content_for_header }}
+
+
+  {% if settings.popup %}
+  <script type="text/javascript">
+    if($(window).width() > 500){
+      // Fancybox Join our mailing list popup
+      $(document).ready(function(){
+
+        var check_cookie = $.cookie('mailing_list_delay_popup');
+        if(check_cookie == null){
+          $.cookie('mailing_list_delay_popup', 'expires_seven_days', { expires: 7 });
+          //fire your fancybox here
+          setTimeout(function(){
+            $.fancybox({
+              href: "#subscribe_popup"
+            });
+          }, 3000);
+        }
+      }); 
+    };
+
+  </script>  
+  {% endif %}
+
+  <script type="text/javascript">
+    $(window).load(function() {  
+      $('.prod-image').matchHeight();
+
+    });
+  </script> 
+
+  <link rel="next" href="/next"/>
+  <link rel="prev" href="/prev"/>
+
+  <!--- Google Analytics JS Code ------>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32633477-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Facebook Conversion Code for Checkout ISHINE365 -->
+  <script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', '6031696014571', {'value':'0.01','currency':'USD'}]);
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                             n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                             t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                                                                                                    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1117844111612405');
+    fbq('track', "PageView");</script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=1117844111612405&ev=PageView&noscript=1"
+                 /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+  <script>
+    jQuery(document).ready(function($) {
+      $(".size-all").after($(".size-XXXL")).after($(".size-XXL")).after($(".size-XL")).after($(".size-L")).after($(".size-M")).after($(".size-S")).after($(".size-XS")).after($(".size-XXS")).after($(".size-XXXS"));
+    });
+  </script>
+
+  <script src="https://raw.githubusercontent.com/webpop/jquery.pin/gh-pages/jquery.pin.js"></script>
+
+
+
+</head>
+
+
+<body class="gridlock {% if template contains 'collection' %}collection{% else %} {{ template }}{% endif %}">
+  {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
+  {% unless the_snippet_content contains 'Liquid error' %}
+  {{ the_snippet_content }}
+  {% endunless %}
+
+
+
+
+
+
+  <div id="mobile-menu">
+
+    <ul>
+
+      {% for link in linklists.main-menu.links %}
+      <li {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}{% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}{% endif %}>
+        {{ link.title | link_to: link.url }}
+        {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}
+        {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}       
+        <ul>
+          {% for l in linklists[child_list_handle].links %}
+          <li><a href="{{ l.url }}">{{ l.title }}</a>
+
+            {% capture child_list_handle %}{{ l.title | handleize }}{% endcapture %}
+            {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}       
+            <ul>
+              {% for l in linklists[child_list_handle].links %}
+              <li><a href="{{ l.url }}">{{ l.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+
+      {% if shop.customer_accounts_enabled %}
+          {% if customer  %}
+      <li class="mm-cust"><a href="/account"><i class="fa fa-user fa-menu"></i><span class="mm-log">Account</span></a></li>
+      <li class="mm-cust"><a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i><span class="mm-log">Logout</span></a></li>
+          {% else %}
+      <li class="mm-cust"><a href="/account/login"><i class="fa fa-user fa-menu"></i><span class="mm-log">Login</span></a></li>
+          {% endif %}
+          {% endif %}
+         {% if settings.show_multiple_currencies %}<li class="mm-cust mm-currency"><span class="mm-log">Choose your Currency</span>{% include 'currency-change' %}</li>{% endif %} 
+
+    </ul>
+
+  </div>
+
+
+  <div class="page-wrap">
+
+
+    <header>
+      <div class="Fixed"><a id="hamburger" href="#mobile-menu"><span></span></a> </div>
+
+      {{ "product-reviews-override.css" | asset_url | stylesheet_tag }}
+      {% include 'twitter-cards' %}
+
+    
+    <nav class="stuckMenu isStuck" style="position: fixed; top: 0px;">
+
+      <div class="gridlock row" id="logo-container">
+        
+        <ul id="main-nav" role="navigation" class="desktop-7 tablet-6 mobile-3"> 
+          
+          <li id="logo">       
+            <a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="logo-img"/></a>  
+            
+          </li> 
+          
+         
+          
+        </ul>
+        <ul id="cart">
+         <!-- <li class="home-icon"><a href="{{ shop.url }}"><i class="fa fa-home"></i></a> -->
+          <li class="seeks"><a id="inline" href="#search_popup" class="open_popup"><i class="fa fa-search"></i></a></li>
+          <li class="seeks-mobile"><a href="/search"><i class="fa fa-search"></i></a></li>
+          {% if shop.customer_accounts_enabled %}
+          {% if customer  %}
+          <li class="cust"><a href="/account"><i class="fa fa-user"></i></a></li>
+          <li class="cust"><a href="/account/logout"><i class="fa fa-sign-out"></i></a></li>
+          {% else %}
+          <li class="cust"><a href="/account/login"><i class="fa fa-user"></i></a></li>
+          {% endif %}
+          {% endif %}
+          {% if settings.show_multiple_currencies %}<li class="nav-currency">{% include 'currency-change' %}</li>{% endif %}
+          <li class="cart-overview"><a href="/cart"> <i class="fa fa-shopping-bag"></i>&nbsp; <span id="item_count">{{ cart.item_count }}</span></a>
+            <div id="crt">
+              {% include 'shopping-cart' %}
+              {% if cart.item_count != 0 %}
+              <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
+              {% endif %}
+            </div>
+          </li>         
+        </ul>        
+        
+        
+      </div>
+      <a href="/collections/gone-girl">
+        <div id="qab_placeholder"></div>
+      </a>
+
+    </nav>
+
+    </header>
+    <div class="clear"></div>
+
+
+    {% if template != 'index' %}
+    <div id="content" class="row qab_ctrl">	
+      {% if template != 'index' %}
+      {% if settings.breadcrumb %}
+      {% include 'breadcrumb' %}	
+      {% endif %}	
+      {% endif %}
+      {{ content_for_layout }}  
+    </div>
+    {% else %}
+    {{ content_for_layout }}
+    {% endif %}
+
+
+    {% if settings.bottom_logo %}
+    <div class="row">
+      <div id="logo" class="desktop-12 tablet-6 mobile-3">       
+        {% if settings.use_logo_image %}
+        <a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;"/></a>
+        {% else %}
+        <a href="/">{{ shop.name }}</a>
+        {% endif %}           
+      </div> 
+    </div>    
+    {% endif %}
+
+
+
+  </div>  
+  <!-- End page wrap for sticky footer -->
+
+  <div id="footer-wrapper">		<div class="feedback-button">
+    <a href="#pop-four" class="fancybox"><span class="feedback-text">Send Us Your Feedback</span></a>
+    <div id="pop-four" style="display: none">{% include 'question' %}</div>
+
+    </div>
+    <div id="footer" class="row">
+
+      {% assign grid = 0 %}
+      {% assign grid = grid | plus: 1 %}
+      {% if settings.footer-2-links != '' %}{% assign grid = grid | plus: 1 %}{% endif %}
+      {% if settings.footer-3-links != '' %}{% assign grid = grid | plus: 1 %}{% endif %} 
+      {% assign grid = grid | plus: 1 %}        
+      {% if grid > 0 %}
+      <div class="desktop-{{ 12 | divided_by: grid }} tablet-half mobile-half">
+        <h4>Customer Service</h4>
+        <ul>
+          {% for link in linklists.footer.links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% if settings.footer-2-links != '' %}
+      <div class="desktop-{{ 12 | divided_by: grid }} tablet-half mobile-half">
+        {% if settings.footer-2-links != '' %}
+        <h4>{{ linklists[settings.footer-2-links].title }}</h4>
+        {% endif %}
+        <ul>
+          {% for link in linklists[settings.footer-2-links].links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if settings.footer-3-links != '' %}
+      <div class="desktop-{{ 12 | divided_by: grid }} tablet-half mobile-half">
+        {% if settings.footer-3-links != '' %}        
+        <h4>{{ linklists[settings.footer-3-links].title }}</h4>
+        {% endif %}
+        <ul>
+          {% for link in linklists[settings.footer-3-links].links %}
+          <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="desktop-{{ 12 | divided_by: grid }} tablet-half mobile-3">
+        <h4>{{ 'layout.footer.connect' | t }}</h4>
+
+        <div id="footer_signup">
+          <ul id="footer-icons" class="desktop-12 tablet-6 mobile-3">
+            {% if settings.show_facebook %}<li><a href="{{ settings.facebook_url }}" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_twitter %}<li><a href="http://www.twitter.com/{{ settings.twittername }}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_pinterest %}<li><a href="{{ settings.pinterest_url }}" target="_blank"><i class="fa fa-pinterest fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_tumblr %}<li><a href="{{ settings.tumblr_url }}" target="_blank"><i class="fa fa-tumblr fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_youtube %}<li><a href="{{ settings.youtube_url }}" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_googleplus %}<li><a href="{{ settings.googleplus_url }}" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_instagram %}<li><a href="http://instagram.com/{{ settings.instagram-id }}" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>{% endif %}
+            {% if settings.show_rss %}<li><a href="{{ shop.url }}/blogs/news.atom" target="_blank"><i class="fa fa-rss fa-2x"></i></a></li>{% endif %}
+            <li><a href="https://www.snapchat.com/add/ishine365.com" target="_blank"><i class="fa fa-snapchat-ghost fa-2x"></i></a></li>
+          </ul>  
+          <p>{{ settings.footer_signup_text }}</p>
+
+          <form action="{{ settings.mailchimp }}" method="post" id="footer-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <input value="" name="EMAIL" class="email" id="footer-EMAIL" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" required="" type="email">
+            <input value="{{ 'general.newsletter_form.submit' | t }}" name="subscribe" id="footer-subscribe" class="button" type="submit">
+          </form>
+        </div> 
+      </div>      
+      {% endif %}
+      <div class="clear"></div>
+
+      <div class="clear"></div>
+
+      <div class="credit desktop-12 tablet-6 mobile-3">
+        <p>
+          {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} {{ shop.name }} -  7292 NW 1ST CT MIAMI, FL 33150
+        </p>
+      </div>
+    </div> 
+  </div>
+
+
+  {% if settings.popup %}
+  {% include 'popup' %}
+  {% endif %}
+
+  <div style='display:none'>
+    <div id='search_popup' style='padding:30px;'>
+      <p class="box-title">{{ 'general.search.title' | t }}<p>
+      <!-- BEGIN #subs-container -->
+      <div id="subs-container" class="clearfix">
+        <div id="search">
+          <form action="/search" method="get">
+            <input type="text" name="q" id="q" placeholder="{{ 'general.search.placeholder' | t }}" /> 
+          </form>
+        </div>  
+      </div>
+    </div>
+  </div>    
+
+  <script type="text/javascript">
+    //initiating jQuery
+    jQuery(function($) {
+      if ($(window).width() >= 741) {
+
+        $(document).ready( function() {
+          //enabling stickUp on the '.navbar-wrapper' class
+          $('nav').stickUp();
+        });
+      }
+
+    });
+  </script> 
+
+  <script id="cartTemplate" type="text/x-handlebars-template">
+
+  {% raw %}{{#each items}}{% endraw %}
+    <div class="quick-cart-item">
+      <div class="quick-cart-image">
+        <a href="{% raw %}{{ this.url }}{% endraw %}" title="{% raw %}{{ this.title }}{% endraw %}">
+          <img src="{% raw %}{{ this.image }}{% endraw %}"  alt="{% raw %}{{ this.title }}{% endraw %}" />
+    </a>
+    </div>
+      <div class="quick-cart-details">
+        <p>
+          <a href="{% raw %}{{ this.url }}{% endraw %}">{% raw %}{{ this.title }}{% endraw %}</a>
+    </p>
+        <p>{% raw %}{{ this.price }}{% endraw %}</p>          
+        <p>
+          <a class="remove_item" href="#" data-id="{% raw %}{{ this.id }}{% endraw %}">{{ 'cart.general.remove' | t }}</a>
+    </p>
+    </div>
+    </div>
+  {% raw %}{{/each}}{% endraw %}  
+  <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
+
+  </script>
+
+
+
+
+  <a href="#" class="scrollup Fixed"><i class="fa fa-angle-up fa-2x"></i></a>
+
+
+  <!-- Begin Recently Viewed Products -->
+  <script type="text/javascript" charset="utf-8">
+    //<![CDATA[
+
+    // Including jQuery conditionnally.
+    if (typeof jQuery === 'undefined') {
+      document.write({{ "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" | script_tag | json }});
+      document.write('<script type="text/javascript">jQuery.noConflict();<\/script>');
+    }
+
+    // Including api.jquery.js conditionnally.
+    if (typeof Shopify.resizeImage === 'undefined') {
+      document.write({{ "api.jquery.js" | shopify_asset_url | script_tag | json }});
+    }
+
+    //]]>
+  </script>
+
+  {{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
+  {{ 'jquery.products.min.js' | asset_url | script_tag }}
+
+  {% if template contains 'product' %}
+
+  <script type="text/javascript" charset="utf-8">
+    //<![CDATA[
+
+    Shopify.Products.recordRecentlyViewed();
+
+    //]]>
+
+
+
+  </script>
+  {% endif %}  
+
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=127142210767229";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+  {% include 'currencies' %}
+
+
+
+
+
+
+  {% include 'shopify-wishlist' %}
+
+  <!-- CRITEO START-->
+  {% include 'criteo-tracking' %}
+  <!-- CRITEO END-->
+
+<script type="text/javascript" src="https://s3.amazonaws.com/lastsecondcoupon/js/quickannouncementbar.js?shop=ishine-365.myshopify.com"></script>
+
+
+  {% include 'limespot-custom-css' %}
+
+  {% include 'remove-sold-out' %}  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  {% include 'sweettooth-initializer' %}
+
+  {% include 'sweettooth-tab-widget' %}
+
+</body>
+</html>
