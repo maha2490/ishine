@@ -279,17 +279,16 @@ div#content {
   max-width: 47px;
 }
 .currency-picker__wrapper {
-  margin-top: -11%;
+  margin-top: -9%;
 } 
 .currency-picker {
-  display: inline;
-  width: auto;
-  vertical-align: inherit;
-  color: #484848;
-  font-size: 1vw;
-  font-weight: 100;
+  color: #5c5c5c;
+  font-size: 1.2vw;
+  font-weight: 500;
 }
-
+ul#cart li.search_icon{ 
+  padding: 0 0 0 20px; 
+}
 
 
 
