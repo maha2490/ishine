@@ -107,7 +107,7 @@
     	margin-top: 7%;
   	}
     .hp-margin {
-  		margin-top: 5%;
+  		margin-top: 9%;
   	}
   	div#logo-container {
     	width: 100%;
@@ -202,16 +202,13 @@
       margin-top: 20px;
       margin-bottom: 20px;
     }
-
     .cart-image {
       display: block;
       text-align: center;
     }  
-
     td.cart-price {
       text-align: center;
     }  
-
     td.cart-price, td.cart-remove, td.cart-quantity, .cart-total {
       clear: none! important;
       float: left;
@@ -221,7 +218,6 @@
       line-height: 48px;
       border-bottom: 0! important;
     }
-
     #shopping-cart tr {
       border-bottom: 1px solid {{ settings.dotted_color }};
     }  
@@ -232,14 +228,17 @@
     	margin-top: 8%;
 	}
     .hp-margin {
-    	margin-top: 9%;
+    	margin-top: 11%;
 	}
   	section.homepage-section {
     	margin-top: 5%;
     }
+    ul#main-nav {
+    	max-width: 61%;
+	}
     ul#main-nav li#logo a img {
     	padding-top: 24%;
-    	margin-left: -122%;
+    	margin-left: -80%;
 	}
 	ul#cart li {
 	    padding: 15px 0 0 17px;
