@@ -2931,7 +2931,7 @@ iframe { width: 100%; }
 	content: '';
 	display: block;
 	width: 40px;
-	height: 2px;
+	height: 4px;
 	position: absolute;
 	left: 18px;
 }

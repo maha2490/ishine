@@ -275,21 +275,29 @@ div#content {
 }
 
 /*NAVIGATION REDESIGN*/
+.hp-margin {
+    margin-top: 0;
+}
 .navbar_icon_positioning {
-  max-width: 47px;
+  max-width: 34px;
 }
 .currency-picker__wrapper {
   margin-top: -9%;
 } 
 .currency-picker {
   color: #5c5c5c;
-  font-size: 1.2vw;
+  font-size: 2em;
   font-weight: 500;
 }
 ul#cart li.search_icon{ 
   padding: 0 0 0 20px; 
 }
-
+.mm-cust {
+  float: left;
+}
+ul#cart li.nav-currency {
+  padding: 0 0 0 12px;
+}
 
 
 
