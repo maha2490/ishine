@@ -429,7 +429,9 @@
     .logo-img {
     	max-width: 50px !important;
 	}
-  
+  	.currency-picker__wrapper {
+    	margin-top: -1%;
+	}
   	select.currency-picker {
     	height: 20px;
     	margin-top: 10px;
@@ -437,6 +439,13 @@
   	.nav-currency {
     	display:none !important;
   	}
+  	.currency-picker {
+    	font-size: 14px;
+    	font-weight: 500;
+    	color: #484848;
+    	background-color: #c9c9c9;
+    	float: right;
+	}
     #hamburger {
     	top: 3.5%;
     }
@@ -472,6 +481,19 @@
 	}
 	ul#cart li {
     	padding: 24px 1px 0 12px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	div#logo-container {
+    	width: 100%;
+	}
+	ul#main-nav li#logo a img {
+	    padding-top: 34%;
+	    margin-left: 10%;
+	}
+	ul#cart li {
+    	padding: 26px 3px 0 8px;
 	}
 }
 

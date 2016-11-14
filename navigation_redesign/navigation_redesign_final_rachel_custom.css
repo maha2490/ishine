@@ -278,6 +278,18 @@ div#content {
 .hp-margin {
     margin-top: 0;
 }
+.mm-cust {
+  width: 100%;  
+}
+span.mm-log {
+  float: left;
+  margin-left: 0;
+}
+.mm-cust img {
+    max-width: 7%;
+    float: right;
+    margin-top: -1.5%;
+}
 .navbar_icon_positioning {
   max-width: 34px;
 }
@@ -292,11 +304,9 @@ div#content {
 ul#cart li.search_icon{ 
   padding: 0 0 0 20px; 
 }
-.mm-cust {
-  float: left;
-}
+
 ul#cart li.nav-currency {
-  padding: 0 0 0 12px;
+  padding: 0 0 0 8px;
 }
 
 
