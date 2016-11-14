@@ -52,6 +52,9 @@
 	    max-width: 48px;
 	    padding-top: 33%;
 	}
+	ul#cart li {
+    	padding: 4px 0 0 17px;
+	}
 }/*END media screen and (max-width: 1219px)*/
 
 
@@ -121,6 +124,9 @@
 	ul#main-nav li#logo a img {
 	    padding-top: 27%;
 	    margin-left: -163%;
+	}
+	.currency-picker__wrapper {
+    	margin-top: -3%;
 	}
 }/* END media screen (max-width: 980px) and (min-width: 741px)*/
 
@@ -234,11 +240,11 @@
     	margin-top: 5%;
     }
     ul#main-nav {
-    	max-width: 61%;
+    	max-width: 59%;
 	}
     ul#main-nav li#logo a img {
     	padding-top: 24%;
-    	margin-left: -80%;
+    	margin-left: -55%;
 	}
 	ul#cart li {
 	    padding: 15px 0 0 17px;
@@ -410,53 +416,68 @@
 }/*END media screen and (max-width: 499px)*/
 
 /*SPECIALITY QUERIES FOR NAVBAR REDESIGN _____________________________________________ */
-@media screen and (max-width: 429px){
-  .hp-margin{
-  	margin-top: 22%;
-  }
-}
-
-
-@media screen and (max-width: 550px){
-  ul#main-nav {
-    max-width: 58%;
-}
-  .logo-img {
-    max-width: 50px !important;
-}
-  
-  select.currency-picker {
-    height: 20px;
-    margin-top: 10px;
-}
-
-  .nav-currency {
-    display:none !important;
-  }
-  
-  #hamburger {
-    top:1%;
-  }
-  
-  ul#cart {
-     top:0px;
-}
-  
-  .mm-currency {
-    display:block !important;
-  }
-}
-
-
-@media screen and (max-width: 289px){
-ul#main-nav {
-    display:none;
-}
-  
-}
-
 @media screen and (min-width: 551px){
   .mm-currency {
     display:none !important;
   }
 }
+
+@media screen and (max-width: 550px){
+    ul#main-nav {
+    	max-width: 58%;
+	}
+    .logo-img {
+    	max-width: 50px !important;
+	}
+  
+  	select.currency-picker {
+    	height: 20px;
+    	margin-top: 10px;
+	}
+  	.nav-currency {
+    	display:none !important;
+  	}
+    #hamburger {
+    	top: 3.5%;
+    }
+  	ul#cart {
+        top:0px;
+	}
+  	.mm-currency {
+    	display:block !important;
+  	}
+  	ul#main-nav li#logo a img {
+    	padding-top: 24%;
+    	margin-left: -4%;
+	}
+	ul#cart li {
+    	padding: 23.5px 13px 0 11px;
+	}
+}
+
+@media screen and (max-width: 429px){
+    .hp-margin{
+  		margin-top: 22%;
+    }
+    ul#main-nav li#logo a img {
+    	padding-top: 25%;
+    	margin-left: 17%;
+	}
+}
+
+@media screen and (max-width: 375px){
+  	ul#main-nav li#logo a img {
+    	padding-top: 27%;
+    	margin-left: -4%;
+	}
+	ul#cart li {
+    	padding: 24px 1px 0 12px;
+	}
+}
+
+@media screen and (max-width: 289px){
+	ul#main-nav {
+    	display:none;
+	}
+}
+
