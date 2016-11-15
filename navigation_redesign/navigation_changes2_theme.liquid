@@ -1,4 +1,5 @@
-<!-- navigation_redesign_final_rachel_theme.liquid -->
+<!-- navigation_changes2_theme.liquid-->
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -206,14 +207,16 @@
 
 
 </head>
+
+
 <body class="gridlock {% if template contains 'collection' %}collection{% else %} {{ template }}{% endif %}">
   {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
   {% unless the_snippet_content contains 'Liquid error' %}
   {{ the_snippet_content }}
   {% endunless %}
-  <div id="mobile-menu"><!--  hamburger -->
+  <div id="mobile-menu">
     <ul>
-      {% for link in linklists.main-menu-development.links %}
+      {% for link in linklists.main-menu-test.links %}
       <li {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}{% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}{% endif %}>
         {{ link.title | link_to: link.url }}
         {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}
@@ -221,6 +224,7 @@
         <ul>
           {% for l in linklists[child_list_handle].links %}
           <li><a href="{{ l.url }}">{{ l.title }}</a>
+
             {% capture child_list_handle %}{{ l.title | handleize }}{% endcapture %}
             {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}       
             <ul>
@@ -236,96 +240,117 @@
         {% endif %}
       </li>
       {% endfor %}
-
       {% if shop.customer_accounts_enabled %}
           {% if customer  %}
-      <li class="mm-cust add_line_top"><a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="navbar_icon_positioning" /><span class="mm-log">Account</span></a></li>
+      <li class="mm-cust add_line_top"><a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" /><span class="mm-log">Account</span></a></li>
       <li class="mm-cust add_line_top"><a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i><span class="mm-log">Logout</span></a></li>
           {% else %}
       <li class="mm-cust add_line_top">
-        <a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="navbar_icon_positioning" /><span class="mm-log">Login</span></a>
+        <a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" /><span class="mm-log">Login</span></a>
       </li>
           {% endif %}
       {% endif %}
       {% if settings.show_multiple_currencies %}
         <li class="mm-cust mm-currency"><span class="mm-log">Currency</span>{% include 'currency-change' %}</li>
-      {% endif %}      
+      {% endif %}  
     </ul>
-    <span class="add_line_top"></span>
   </div>
   <div class="page-wrap">
     <header>
       <div class="Fixed"><a id="hamburger" href="#mobile-menu"><span></span></a> </div>
       {{ "product-reviews-override.css" | asset_url | stylesheet_tag }}
-      {% include 'twitter-cards' %}
+      {% include 'twitter-cards' %} 
       <nav class="stuckMenu isStuck" style="position: fixed; top: 0px;">
-        <div class="gridlock row" id="logo-container">
-          <ul id="main-nav" role="navigation" class="desktop-7 tablet-6 mobile-3"> 
-            <li id="logo">       
-              <a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="logo-img"/></a>  
-            </li>      
-          </ul>
-          <ul id="cart">
-            <li class="search">
-              <a href="#search_popup" class="open_popup"><img src="{{ 'search_icon_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
-            </li>
-            <li class="shopping_cart">
-              <a href="/cart"><img src="{{ 'shopping_icon_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning"/>&nbsp; 
-                <!-- TAKING CART NUMBER OUT FOR NOW -->
-                <!-- <span id="item_count">{{ cart.item_count }}</span> -->
-              </a>
-              <!-- <div id="crt">
-                {% include 'shopping-cart' %}
-                {% if cart.item_count != 0 %}
-                  <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
-                {% endif %}
-              </div> -->
-            </li>
-            <!-- PREVIOUS SHOPPING CART -->
-            <!-- <li class="cart-overview"><a href="/cart"> <i class="fa fa-shopping-bag"></i>&nbsp; <span id="item_count">{{ cart.item_count }}</span></a>
-              <div id="crt">
-                {% include 'shopping-cart' %}
-                {% if cart.item_count != 0 %}
-                  <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
-                {% endif %}
-              </div>
-            </li> -->
-            {% if settings.show_multiple_currencies %}
-              <li class="nav-currency">{% include 'currency-change' %}</li>
-            {% endif %}
-          </ul>                 
-        </div>
-        <a href="/collections/gone-girl">
-          <div id="qab_placeholder"></div>
-        </a>
-      </nav>
+      <div class="row" id="logo-container">
+	        <ul id="main-nav" role="navigation" class="desktop-8 tablet-6 mobile-hide"> 	          
+	            <li id="logo">       
+	            	<a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="logo-img"/></a>  
+	            </li> 	          
+	          {% for link in linklists.main-menu-test.links %}
+	          {% include 'navigation' %}
+	          {% endfor %}    
+	        </ul>
+	        <ul id="cart" class="desktop-4 tablet-6 mobile-3">
+	            <li class="search">
+	                <a href="#search_popup" class="open_popup"><img src="{{ 'search_icon_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
+	            </li>
+	            <li class="shopping_cart">
+	                <a href="/cart"><img src="{{ 'shopping_icon_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning"/>&nbsp; </a>
+	            </li>
+	          	{% if shop.customer_accounts_enabled %}
+	          		{% if customer  %}
+	          			<li class="mm-cust add_line_top">
+	          				<a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning" />
+	          					<span class="mm-log">Account</span>
+	          				</a>
+	          			</li>
+	          			<li class="mm-cust add_line_top">
+	          				<a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i>
+	          					<span class="mm-log">Logout</span>
+	          				</a>
+	          			</li>
+	            {% else %}
+	          		<li class="mm-cust add_line_top">
+	            		<a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning" />
+	            			<!-- <span class="mm-log">Login</span> -->
+	            		</a>
+	          		</li>
+	            {% endif %}
+	          {% endif %}
+	          {% if settings.show_multiple_currencies %}<li>{% include 'currency-change' %}</li>{% endif %}
+	<!--           <li class="cart-overview"><a href="/cart"> <i class="fa fa-shopping-bag"></i>&nbsp; <span id="item_count">{{ cart.item_count }}</span></a>
+	            <div id="crt">
+	              {% include 'shopping-cart' %}
+	              {% if cart.item_count != 0 %}
+	              <a class="checkout-link" href="/cart">{{ 'cart.general.checkout' | t }}</a>
+	              {% endif %}
+	            </div>
+	          </li>          -->
+	        </ul>        
+	        
+	        
+	      </div>
+      <a href="/collections/gone-girl">
+        <div id="qab_placeholder"></div>
+      </a>
+
+    </nav>
+
     </header>
     <div class="clear"></div>
+
+
     {% if template != 'index' %}
-      <div id="content" class="row qab_ctrl">	
-        {% if template != 'index' %}
-        {% if settings.breadcrumb %}
-        {% include 'breadcrumb' %}	
-        {% endif %}	
-        {% endif %}
-        {{ content_for_layout }}  
-      </div>
+    <div id="content" class="row qab_ctrl">	
+      {% if template != 'index' %}
+      {% if settings.breadcrumb %}
+      {% include 'breadcrumb' %}	
+      {% endif %}	
+      {% endif %}
+      {{ content_for_layout }}  
+    </div>
     {% else %}
     {{ content_for_layout }}
     {% endif %}
+
+
     {% if settings.bottom_logo %}
-      <div class="row">
-        <div id="logo" class="desktop-12 tablet-6 mobile-3">       
-          {% if settings.use_logo_image %}
-          <a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;"/></a>
-          {% else %}
-          <a href="/">{{ shop.name }}</a>
-          {% endif %}           
-        </div> 
-      </div>    
+    <div class="row">
+      <div id="logo" class="desktop-12 tablet-6 mobile-3">       
+        {% if settings.use_logo_image %}
+        <a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;"/></a>
+        {% else %}
+        <a href="/">{{ shop.name }}</a>
+        {% endif %}           
+      </div> 
+    </div>    
     {% endif %}
+
+
+
   </div>  
   <!-- End page wrap for sticky footer -->
+
   <div id="footer-wrapper">		<div class="feedback-button">
     <a href="#pop-four" class="fancybox"><span class="feedback-text">Send Us Your Feedback</span></a>
     <div id="pop-four" style="display: none">{% include 'question' %}</div>
@@ -521,6 +546,11 @@
 
   {% include 'currencies' %}
 
+
+
+
+
+
   {% include 'shopify-wishlist' %}
 
   <!-- CRITEO START-->
@@ -533,6 +563,12 @@
   {% include 'limespot-custom-css' %}
 
   {% include 'remove-sold-out' %}  
+  
+
+  
+
+  
+
   
 
   {% include 'sweettooth-initializer' %}

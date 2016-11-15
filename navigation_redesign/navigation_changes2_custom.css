@@ -1,4 +1,4 @@
-/* navigation_redesign_final_rachel_custom.css */
+/*navigation_changes2_custom.css*/
 /* 
 * Selecter v3.2.4 - 2015-01-07 
  * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
@@ -270,54 +270,40 @@
 	margin-top: 6%;
 }
  */
+
+
 div#content {
     margin-top: 8%;
 }
 
-/*NAVIGATION REDESIGN*/
+/*NAVIGATION REDESIGN___________________*/
 .hp-margin {
     margin-top: 0;
 }
-.mm-cust {
-  width: 100%; 
-}
-.add_line_top {
-  border-top: 1px solid #fff; 
-}
-span.add_line_top {
-  display: inline-block;
-  border-top: 1px solid #fff;
-}
-span.mm-log {
-  float: left;
-  margin-left: 0;
-}
-.mm-cust img {
-    max-width: 7%;
-    float: right;
-    margin-right: 4%;
+ul#main-nav li a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #5c5c5c;
+    padding: 0 20px 0 0;
+    text-transform: uppercase;
 }
 .navbar_icon_positioning {
-  max-width: 34px;
+  max-width: 24px;
 }
 .currency-picker__wrapper {
   margin-top: -9%;
 } 
 .currency-picker {
   color: #5c5c5c;
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: 500;
+  border: none;
 }
-ul#cart li.search_icon{ 
-  padding: 0 0 0 20px; 
+ul#cart li.search { 
+  padding: 0 5px 0 20px; 
 }
 
 ul#cart li.nav-currency {
   padding: 0 0 0 8px;
 }
-
-
-
-
-
-

@@ -175,7 +175,9 @@ li.mm-vertical.mm-opened > .mm-panel {
     .mm-listview > li, .mm-listview > li:after,
     .mm-listview > li .mm-next,
     .mm-listview > li .mm-next:before {
-      border-color: inherit; }
+      /*border-color: inherit;*/ 
+      border-color: #fff;
+    }
     .mm-listview > li > a,
     .mm-listview > li > span {
       text-overflow: ellipsis;
@@ -200,7 +202,7 @@ li.mm-vertical.mm-opened > .mm-panel {
     .mm-listview > li:not(.mm-divider):after {
       left: 20px; }
   .mm-listview .mm-next {
-    background: rgba(3, 2, 1, 0);
+ /*   background: rgba(3, 2, 1, 0);*/
     width: 50px;
     padding: 0;
     position: absolute;
@@ -285,7 +287,8 @@ li.mm-vertical.mm-opened > .mm-panel {
 .mm-arrow:after {
   border-top: none;
   border-left: none;
-  right: 20px; }
+  right: 30px; 
+}
 
 .mm-menu {
   background: #f3f3f3;
@@ -1265,9 +1268,12 @@ html.mm-opening .mm-menu.mm-front, html.mm-opening .mm-menu.mm-next {
   border-color: #fff;
   color: #484848; 
 }
-  .mm-menu.mm-theme-dark .mm-navbar > *,
-  .mm-menu.mm-theme-dark .mm-navbar a {
-    color: rgba(255, 255, 255, 0.4); }
+/*CHANGE SHOP NAME COLOR*/
+.mm-menu.mm-theme-dark .mm-navbar > *,
+.mm-menu.mm-theme-dark .mm-navbar a {
+  /*color: rgba(255, 255, 255, 0.4); */
+  color: #484848;
+}
   .mm-menu.mm-theme-dark .mm-navbar .mm-btn:before, .mm-menu.mm-theme-dark .mm-navbar .mm-btn:after {
     border-color: rgba(255, 255, 255, 0.4); }
   .mm-menu.mm-theme-dark .mm-listview {
@@ -1500,3 +1506,9 @@ html.mm-opening .mm-menu.mm-front, html.mm-opening .mm-menu.mm-next {
     display: none; }
 .mm-menu.mm-tileview .mm-listview {
   margin: 0; }
+
+
+/*RACHEL'S ADDED CSS */
+.mm-listview li:hover {
+  background-color: #B8E3E8;
+}
