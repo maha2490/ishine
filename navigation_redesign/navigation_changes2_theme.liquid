@@ -242,11 +242,12 @@
       {% endfor %}
       {% if shop.customer_accounts_enabled %}
           {% if customer  %}
-      <li class="mm-cust add_line_top"><a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" /><span class="mm-log">Account</span></a></li>
+      <li class="mm-cust add_line_top"><a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="mobile_icon_positioning"/>
+        <span class="mm-log">Account</span></a></li>
       <li class="mm-cust add_line_top"><a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i><span class="mm-log">Logout</span></a></li>
           {% else %}
       <li class="mm-cust add_line_top">
-        <a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" /><span class="mm-log">Login</span></a>
+        <a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="mobile_icon_positioning"/><span class="mm-log">Login</span></a>
       </li>
           {% endif %}
       {% endif %}
@@ -279,20 +280,20 @@
 	            </li>
 	          	{% if shop.customer_accounts_enabled %}
 	          		{% if customer  %}
-	          			<li class="mm-cust add_line_top">
+	          			<li class="mm-cust">
 	          				<a href="/account"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning" />
 	          					<span class="mm-log">Account</span>
 	          				</a>
 	          			</li>
-	          			<li class="mm-cust add_line_top">
+	          			<li class="mm-cust">
 	          				<a href="/account/logout"><i class="fa fa-sign-out fa-menu"></i>
 	          					<span class="mm-log">Logout</span>
 	          				</a>
 	          			</li>
 	            {% else %}
-	          		<li class="mm-cust add_line_top">
+	          		<li class="mm-cust">
 	            		<a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning" />
-	            			<!-- <span class="mm-log">Login</span> -->
+	            			<span class="mm-log">Login</span>
 	            		</a>
 	          		</li>
 	            {% endif %}
@@ -310,10 +311,6 @@
 	        
 	        
 	      </div>
-      <a href="/collections/gone-girl">
-        <div id="qab_placeholder"></div>
-      </a>
-
     </nav>
 
     </header>

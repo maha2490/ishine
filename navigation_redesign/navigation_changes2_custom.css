@@ -307,3 +307,6 @@ ul#cart li.search {
 ul#cart li.nav-currency {
   padding: 0 0 0 8px;
 }
+.mm-log {
+	display: none; 
+}
