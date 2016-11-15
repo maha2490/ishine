@@ -55,6 +55,9 @@
 	ul#cart li {
     	padding: 4px 0 0 17px;
 	}
+	.mm-currency {
+    	display:none !important;
+  	}
 }/*END media screen and (max-width: 1219px)*/
 
 

@@ -21,7 +21,7 @@
     background: #fff;
     border-bottom: 1px solid rgba( 255, 255, 255, 0.5 );
     opacity: 0.9;
-    top: 0;
+    top: 6px;
     display:block !important;
   }
    ul#cart li.cust {
@@ -60,6 +60,10 @@
   #cart li.mm-cust {
     display: none;
   }
+  .mm-cust img {
+    float: right;
+    margin-right: 3%;
+  }
   .mm-log {
 	display: inline-block; 
   }
@@ -67,8 +71,9 @@
   	max-width: 24px;
   }
   .mm-currency {
-    display: none;
+    display:none !important;
   }
+
 }/*END media screen and (max-width: 1219px)*/
 
 
@@ -111,7 +116,7 @@
     position:fixed;   
   } 
   a#hamburger {
-    left: -14px;
+    left: 0;
   }
   .hp-slide {
     margin-top: 7%;
@@ -122,7 +127,7 @@
   section.homepage-section {
     margin-top: 5%;
   }
-}
+} /*END media screen and (max-width: 980px) and (min-width: 741px)*/
 
 @media screen and (max-width: 740px) and (min-width: 500px) { 
     .trends-left {
@@ -142,12 +147,11 @@
     }
 
     ul#main-nav { display: none; }
-    #hamburger
-    {
+    #hamburger {
       background: #fff;
       border-bottom: 1px solid rgba( 255, 255, 255, 0.5 );
       opacity: 0.9;
-      top: 0;
+      top: 4px;
       display:block !important;
     }
     .mobile-hide { display: none; }
@@ -235,12 +239,15 @@
     .hp-slide {
     	margin-top: 8%;
 	}
-    .hp-margin {
+  .hp-margin {
     	margin-top: 7%;
 	}
-  	section.homepage-section {
-    	margin-top: 5%;
-    }
+	section.homepage-section {
+  	margin-top: 5%;
+  }
+  .mm-currency {
+    display:none !important;
+  }
 }/*END media screen and (max-width: 740px) and (min-width: 500px)*/
 
 
@@ -413,18 +420,32 @@
     #shopping-cart tr {
       border-bottom: 1px solid {{ settings.dotted_color }};
     }
-   /*#qab_placeholder {
-      margin-top: 17%;
-      margin-bottom: 1%;
-	} */
-	.qab_ctrl{
-      padding-top: 10%;
-  	}  
     .hp-margin {
     	margin-top: 5%;
-	}
+	  }
+    .nav-currency {
+      display:none !important;
+    }
     .mm-currency {
-    	display:none !important;
+      display:block !important;
+    }
+    .currency-picker__wrapper {
+      margin-top: -1%;
+    }
+    select.currency-picker {
+      height: 20px;
+      margin-top: 10px;
+    }
+    .currency-picker {
+      font-size: 14px;
+      font-weight: 500;
+      color: #484848;
+      background-color: #c9c9c9;
+      float: right;
+    }
+    ul#cart li,
+    ul#cart li.search {
+      padding: 9px 5px 0 20px;
     }
   }/*END media screen and (max-width: 499px)*/
 @media screen and (max-width: 429px){
