@@ -222,9 +222,6 @@
         {% capture child_list_handle %}{{ link.title | handleize }}{% endcapture %}
         {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}       
         <ul>
-          <li class="mm-cust add_line_top">
-            <a href="/account/login"><img src="{{ 'avatar_darker.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="mobile_icon_positioning"/><span class="mm-log">Login</span></a>
-          </li>
           {% for l in linklists[child_list_handle].links %}
           <li><a href="{{ l.url }}">{{ l.title }}</a>
 
@@ -265,6 +262,9 @@
       {{ "product-reviews-override.css" | asset_url | stylesheet_tag }}
       {% include 'twitter-cards' %} 
       <nav class="stuckMenu isStuck" style="position: fixed; top: 0px;">
+      <div id="logo_mobile_frame">       
+        <span class="logo_helper"></span><a href="/"><img src="{{ 'logo_transparent_bg.png' | asset_url }}" alt="{{ shop.name }}" style="border: 0;" class="logo_mobile_icon"/></a>  
+      </div> 
       <div class="row" id="logo-container">
 	        <ul id="main-nav" role="navigation" class="desktop-8 tablet-6 mobile-hide"> 	          
 	            <li id="logo">       
@@ -274,6 +274,7 @@
 	          {% include 'navigation' %}
 	          {% endfor %}    
 	        </ul>
+          
 	        <ul id="cart" class="desktop-4 tablet-6 mobile-3">
 	            <li class="search">
 	                <a href="#search_popup" class="open_popup"><img src="{{ 'search_icon_darker.png' | asset_url }}" alt="{{ shop.name }}" class="navbar_icon_positioning search_icon"/></a>
