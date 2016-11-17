@@ -323,3 +323,6 @@ nav.stuckMenu.isStuck {
 .logo_mobile_icon {
 	display: none;
 }
+ul#cart li.mm-cust.logout {
+  margin-top: -20%;
+}
