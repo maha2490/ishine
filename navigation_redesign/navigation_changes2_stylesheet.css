@@ -1765,10 +1765,16 @@ section.homepage-section{
 }
 
 
-#full-width-filter { padding-bottom: 20px; border-bottom: 1px solid {{ settings.dotted_color }}; float: right; margin-bottom: 20px; }
+#full-width-filter { 
+  padding-bottom: 20px; 
+  border-bottom: 1px solid 
+  {{ settings.dotted_color }}; 
+  float: right; 
+  margin-bottom: 20px; 
+}
 
 #side-filter .clearfix.filter {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 
