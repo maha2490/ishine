@@ -296,7 +296,7 @@ ul#main-nav li a {
   max-width: 24px;
 }
 .currency-picker__wrapper {
-  margin-top: -9%;
+  margin-top: -14%;
 } 
 .currency-picker {
   color: #5c5c5c;
@@ -324,5 +324,5 @@ nav.stuckMenu.isStuck {
 	display: none;
 }
 ul#cart li.mm-cust.logout {
-  margin-top: -20%;
+  margin-top: -2%;
 }
