@@ -32,7 +32,7 @@
   .logo_mobile_icon {
     display: inline-block;
     vertical-align: middle;
-    max-width: 26%;
+    /*max-width: 26%;*/
   }
   ul#cart {
     /* text-align: center; */
@@ -98,6 +98,9 @@
   .mm-currency {
     display:none !important;
   }
+  .currency-picker__wrapper {
+    margin-top: -15%;
+  }
 }/*END media screen and (max-width: 1219px)*/
 
 
@@ -154,6 +157,7 @@
   #logo_mobile_frame {
     margin-right: 48%;
     margin-left: 42%;
+    margin-top: 0.4%;
   }
 } /*END media screen and (max-width: 980px) and (min-width: 741px)*/
 
@@ -484,7 +488,7 @@
     margin-left: 35%;
   }
   .logo_mobile_icon {
-    max-width: 30%;
+    max-width: 92%;
   } 
   #logo-container {
     padding-top: 2%;
@@ -500,13 +504,19 @@
 }
 @media screen and (max-width: 375px){
   ul#cart li, ul#cart li.search {
-    padding: 15px 9px 0 6px;
+    padding: 15px 5px 0 6px;
   }
   #logo_mobile_frame {
     margin-left: 31%;
   }
+  .logo_mobile_icon {
+    max-width: 92%;
+  } 
 }
-
-
+@media screen and (max-width: 345px){
+  .logo_mobile_icon {
+    max-width: 75%;
+  } 
+}
 
 
